@@ -10,6 +10,14 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            Publiser pub = new Publiser();
+            Subscriber A = new Subscriber("A");
+            Subscriber B = new Subscriber("B");
+            Subscriber C = new Subscriber("C");
+            List<IObserver> subs = new List<IObserver>() { A, B, C };
+            pub.Attach(subs);
+            pub.Notify();
+            Console.ReadLine();
         }
     }
 }
